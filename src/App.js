@@ -11,7 +11,7 @@ const App = () =>  (
     <div>
       <Link
         to= "/"
-        style={{marginLeft: 50,
+        style={{marginLeft: 5,
         }}
       >
         Home
