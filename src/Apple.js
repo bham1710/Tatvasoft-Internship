@@ -10,7 +10,7 @@ export const Apple = () => {
     
     return(
         <div>
-            <div> Apple Page </div>
+            <div> Apple Page 🍎 </div>
             <button onclick={onHomePageButtonClick}>Navigate to Home Page</button>
         </div>
     );
