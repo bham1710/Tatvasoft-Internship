@@ -1,56 +1,36 @@
+// import logo from './logo.svg';
 import './App.css';
-
-import {Routes, Route, Link, BrowserRouter} from 'react-router-dom';
-
-import appStyle from './AppStyle.module.css'
-import apk from './Apk.module.css'
-
-import {HomePage} from './HomePage';
-import {Apple} from './Apple';
-import {NotFound} from './NotFound';
-/*import Logo from './logo.svg';*/
-import { ThemeProvider } from '@emotion/react';
-import {theme} from './styles';
-
-const App = () =>  (
-  <>
-  <ThemeProvider theme={theme}>
-      {/*<img src={Logo} alt="App Logo"/>*/}
-  <img src={`${process.env.REACT_APP_HOSTED_URL}logo192.png`} alt="App Logo"/>
-  
-  <BrowserRouter>
-    <div
-    className={apk.navbarStyle}
-    >
-      <Link
-        to= "/"
-        style={{marginLeft: 5,
-        }}>
-        Home
-      </Link>
-
-      <Link 
-        to= "/apple"
-        style={{marginLeft: 5,
-        }}> 
-        Apple
-      </Link>  
-
-      <Link 
-        to= "/applet"
-        style={{marginLeft: 5,
-        }}> Applet 
-        </Link>
+import { Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Home } from './components/Home';
+import { Register } from './components/Register';
+import { Login } from './components/Login/Login';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BookStore } from './components/BookStore';
+import { useEffect, useState } from 'react';
+import { MainNavigation } from './components/MainNavigation';
+import { Footer } from './components/footers/Footer';
+import { Headers } from './components/headers/Headers';
+const App = () => {
+  // const [isLogin,setIsLogin] = useState(localStorage.getItem("isLogin"));
+  const isLogin = localStorage.getItem("isLogin");
+  useEffect(() => {
+    // console.log(isLogin);
+    localStorage.setItem("isLogin",false);
+    console.log(localStorage.getItem("isLogin"));
+  });
+  return (
+    <div>
+      <BrowserRouter>
+        <Headers/>
+        <ToastContainer />
+        <MainNavigation />
+        <Footer/>
+      </BrowserRouter>
     </div>
-    <Routes>
-      <Route path="/"element={<HomePage/>}></Route>
-      <Route path="/apple"element={<Apple/>}></Route>
-      <Route path="*"element={<NotFound/>}></Route>
-    </Routes>
-  </BrowserRouter>
-</ThemeProvider>
-
-  </>
-);
+  );
+}
 
 export default App;

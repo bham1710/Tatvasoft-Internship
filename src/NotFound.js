@@ -1,1 +1,1 @@
-export const NotFound = () => <div> 404 Page Not Found </div>;
+export const NotFound = () => <div style={{margin: "20px", fontSize: "26px"}}>404 Page Not Found</div>

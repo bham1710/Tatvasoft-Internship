@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::selection {
+  color: white;
+  background: #f14d54;
+}
+
+*{
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif
+}
